@@ -12,7 +12,7 @@ class NQueensTest {
 
     @Test
     void findSolution() {
-        int n = 20;
+        int n = 25;
         int[] it = nQueens.findSolution(n);
         assertNotNull(it);
         assertEquals(n, it.length);

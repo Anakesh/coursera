@@ -9,16 +9,15 @@ public class NQueens {
     }
 
     private int[] findSolutionRecursive(int currentRow, int[] rowToCol) {
+        if (currentRow == rowToCol.length) {
+            return rowToCol;
+        }
         for (int i = 0; i < rowToCol.length; i++) {
             if (isValid(currentRow, i, rowToCol)) {
                 rowToCol[currentRow] = i;
-                if (currentRow == rowToCol.length - 1) {
-                    return rowToCol;
-                } else {
-                    int[] solution = findSolutionRecursive(currentRow + 1, rowToCol);
-                    if (solution != null)
-                        return solution;
-                }
+                int[] solution = findSolutionRecursive(currentRow + 1, rowToCol);
+                if (solution != null)
+                    return solution;
             }
         }
         return null;
