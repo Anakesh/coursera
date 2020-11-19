@@ -2,11 +2,11 @@ package ru.anakesh.coursera.mathematical_thinking.diagonals;
 
 public class Diagonals {
     private final int n;
-    private final int maxIndex;
+    private final int size;
 
     public Diagonals(int n) {
         this.n = n;
-        this.maxIndex = (n * n);
+        this.size = (n * n);
     }
 
     public String[][] placeDiagonals(int numOfDiagonals) {
@@ -19,7 +19,7 @@ public class Diagonals {
     }
 
     private int[] putNewDiagonal(int diagonalsToPut, int currentIndex, int[] field) {
-        if (currentIndex == maxIndex) {
+        if (currentIndex == size) {
             if (diagonalsToPut == 0) {
                 return field;
             } else {
@@ -51,10 +51,10 @@ public class Diagonals {
             if (field[index - n] == -possibleDiagonal) {
                 return true;
             }
-            if (possibleDiagonal == 1 && index % n > 0 && field[index - 1 - n] != -possibleDiagonal) {
+            if (possibleDiagonal == 1 && index % n > 0 && field[index - 1 - n] == 1) {
                 return true;
             }
-            return possibleDiagonal == -1 && index % n < (n - 1) && field[index + 1 - n] != -possibleDiagonal;
+            return possibleDiagonal == -1 && index % n < (n - 1) && field[index + 1 - n] == -1;
         }
         return false;
     }

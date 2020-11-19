@@ -10,8 +10,8 @@ class DiagonalsTest {
 
     @Test
     void placeDiagonals() {
-        Diagonals diagonals = new Diagonals(4);
-        String[][] field = diagonals.placeDiagonals(10);
+        Diagonals diagonals = new Diagonals(6);
+        String[][] field = diagonals.placeDiagonals(22);
         assertNotNull(field);
         for (String[] strings : field) {
             System.out.println(Arrays.toString(strings));
